@@ -33,3 +33,25 @@ def calcula_pontos_regra_simples (faces):
     for i in faces:
         pontos[i] += i
     return pontos
+
+def calcula_pontos_soma (lista):
+    soma =0
+
+    verificador=0
+    for i in range (1,len(lista)):
+        if lista[i]== lista[i-1]+1:
+            verificador += 1
+    if verificador == (len (lista)-1):
+        if len (lista)==4:
+            return (15)
+        if len(lista)==5:
+            return (15)
+    
+    valor=0 
+    for i in range (len(lista)-5):
+        if lista[i]==lista[i+1] and lista[i]==lista[i+2] and lista[i]==lista[i+3] and lista[i]==lista[i+4]:
+            return (50)
+    for i in range (len(lista)):
+        soma += lista[i]
+    return (soma)
+
