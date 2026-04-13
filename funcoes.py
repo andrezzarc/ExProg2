@@ -6,10 +6,14 @@ def rolar_dados (n):
     return (lista)
 
 def guardar_dado (rolados,guardados,n):
-    for i in range(len(rolados)):
-        if n == i:
-            guardados.append(rolados[i])
-    res = [rolados, guarados]
-    return res
 
-    
+    resp = []
+    for i in range(len(rolados)):
+        if i != n:
+            resp.append(rolados[i])
+        elif n == i:
+            guardados.append(rolados[i])
+    ok = [resp, guardados]
+
+    return ok
+
