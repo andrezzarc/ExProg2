@@ -123,5 +123,13 @@ def calcula_pontos_quadra (l):
         return (soma)
     return (0)
 
-#print (calcula_pontos_quadra( [6, 4, 1, 6, 3, 3, 1, 4, 4, 5, 1, 1, 3, 1, 3, 5, 6, 4, 5]))
 
+def calcula_pontos_quina (l):
+    for i in range (len(l)):
+        contador= 0
+        for a in range (len(l)):
+            if l[i]== l[a]:
+                contador += 1
+        if contador>=5:
+            return (50)
+    return (0)
