@@ -87,5 +87,24 @@ def calcula_pontos_sequencia_alta (l):
             return (30) 
     return (0)
 
-
+def calcula_pontos_full_house (l):
+    soma2=0
+    soma3=0
+    for i in range (len(l)):
+        soma= l[i]
+        contador= 0
+        a=0
+        while a<len(l):
+            if l[a]==l[i] and a != i:
+                contador += 1
+                soma += l[i]
+            a += 1
+        if contador == 1:
+            soma2= soma
+        elif contador == 2:
+            soma3= soma
+    if soma2 !=0 and soma3 != 0:
+        return (soma2+soma3)
+    else:
+        return (0)
 
