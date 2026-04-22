@@ -71,7 +71,21 @@ def calcula_pontos_sequencia_baixa (l):
             return (15) 
     return (0)
 
-
+def calcula_pontos_sequencia_alta (l):
+    for i in range (len(l)):
+        numero= l[i]
+        contador=0 
+        a=0
+        while a<len(l):
+            if l[a] == numero +1:
+                contador +=1
+                numero += 1
+                a=0
+            else:
+                a +=1
+        if contador >= 4:
+            return (30) 
+    return (0)
 
 
 
