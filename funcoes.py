@@ -136,3 +136,17 @@ def calcula_pontos_quina (l):
 
 def calcula_pontos_regra_avancada(lista):
     dicionario = {"cinco_iguais": calcula_pontos_quina(lista), "full_house": calcula_pontos_full_house(lista), "quadra": calcula_pontos_quadra(lista), "sem_combinacao": calcula_pontos_soma(lista), "sequencia_alta": calcula_pontos_sequencia_alta(lista), "sequencia_baixa": calcula_pontos_sequencia_baixa(lista)}
+    return dicionario
+
+def faz_jogada(lista, categoria, dicio):
+    simples = calcula_pontos_regra_simples(lista)
+    avancada = calcula_pontos_regra_avancada(lista)
+
+    s = dicio["regra_simples"]
+    a = dicio["regra_avancada"]
+
+    if categoria in a:
+        a[categoria] = avancada[categoria]
+    else:
+        s[int(categoria)] = simples[int(categoria)]
+    return dicio
